@@ -51,8 +51,8 @@
             <TextView
                 android:id="@+id/txtProductName"
                 style="@style/MyTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="12dp"
+                android:layout_height="15dp"
                 android:paddingHorizontal="@dimen/_5sdp"
                 android:singleLine="true"
                 android:textSize="@dimen/_10ssp"

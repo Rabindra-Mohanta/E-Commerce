@@ -7,6 +7,19 @@
         android:layout_height="match_parent"
         tools:context=".screens.Tab.TabFragment">
 
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/yellow_tool_gradient"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <include
+                android:id="@+id/newToolbar"
+                layout="@layout/my_toolbar" />
+        </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPager2"
@@ -15,7 +28,7 @@
             app:layout_constraintBottom_toTopOf="@+id/tabLayout"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"

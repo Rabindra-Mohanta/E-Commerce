@@ -42,7 +42,7 @@
         tools:layout="@layout/fragment_favorite" />
     <fragment
         android:id="@+id/homeFragment"
-        android:name="alkusi.mahato.e_commerce.screens.Home.HomeFragment"
+        android:name="alkusi.mahato.e_commerce.screens.Home.Fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment

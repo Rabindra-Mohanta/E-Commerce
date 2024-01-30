@@ -1,4 +1,4 @@
-package alkusi.mahato.e_commerce.screens.Home
+package alkusi.mahato.e_commerce.screens.Home.Fragments
 
 import alkusi.mahato.e_commerce.R
 import alkusi.mahato.e_commerce.databinding.FragmentHomeBinding

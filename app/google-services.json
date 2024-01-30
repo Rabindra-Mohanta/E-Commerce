@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "150947792105",
+    "project_id": "e-commerce-ef196",
+    "storage_bucket": "e-commerce-ef196.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:150947792105:android:f48a8dda1f92a5a3315c78",
+        "android_client_info": {
+          "package_name": "alkusi.mahato.e_commerce"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDtveuFPHHf-QDhy2F6_2yEomiVbBma0s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

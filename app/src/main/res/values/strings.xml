@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">E-Commerce</string>
+    <string name="txt_sign_in">Sign in</string>
+    <string name="txt_sign_up">Sign up</string>
+    <string name="txt_login">Login</string>
+    <string name="txt_register">Register</string>
+    <string name="txt_forgot_password">Forgot Password ?</string>
+    <string name="txt_enter_email">Enter Email</string>
+    <string name="txt_enter_password">Enter Password</string>
+    <string name="txt_enter_confirm_pass">Enter Confirm Password</string>
+    <string name="txt_enter_name">Enter name</string>
+    <string name="txt_create">Create</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_home">Home</string>
+    <string name="txt_ordered">Ordered</string>
+    <string name="txt_cart">Cart</string>
+    <string name="txt_my_profile">My Profile</string>
+    <string name="txt_favorite">Favorite</string>
+    <string name="txt_no_data_found">No data found</string>
+    <string name="txt_all">All</string>
+    <string name="txt_male">Male</string>
+    <string name="txt_female">Female</string>
+</resources>

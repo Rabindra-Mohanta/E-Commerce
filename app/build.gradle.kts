@@ -77,6 +77,10 @@ dependencies {
     //ssdp
     implementation("com.intuit.sdp:sdp-android:1.1.0")
     implementation("com.intuit.ssp:ssp-android:1.1.0")
+    //circle image
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+    //dialog
+    implementation("com.saadahmedev.popup-dialog:popup-dialog:1.0.5")
 
 }
 

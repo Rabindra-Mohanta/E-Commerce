@@ -9,4 +9,9 @@ class OrderedFragment : BaseFragment<FragmentOrderedBinding>(R.layout.fragment_o
 
     }
 
+    override fun onResume() {
+        super.onResume()
+        requireActivity().title = resources.getString(R.string.txt_ordered)
+    }
+
 }

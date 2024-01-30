@@ -5,6 +5,12 @@ import alkusi.mahato.e_commerce.library.views.BaseFragment
 
 class FavoriteFragment : BaseFragment<FragmentFavoriteBinding>(R.layout.fragment_favorite){
     override fun FragmentFavoriteBinding.initialize() {
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        requireActivity().title = resources.getString(R.string.txt_favorite)
     }
 
 }

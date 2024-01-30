@@ -10,6 +10,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         init()
     }
 
+    override fun onResume() {
+        super.onResume()
+        requireActivity().title = resources.getString(R.string.txt_home)
+    }
 private fun init()
 {
     binding.txtAll.setBackgroundColor(resources.getColor(R.color.filter_bg_color))

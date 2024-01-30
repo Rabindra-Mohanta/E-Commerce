@@ -10,5 +10,9 @@ class CartFragment : BaseFragment<FragmentCartBinding>(R.layout.fragment_cart) {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+        requireActivity().title = resources.getString(R.string.txt_cart)
+    }
 
 }

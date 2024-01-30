@@ -21,4 +21,18 @@
     <string name="txt_male">Male</string>
     <string name="txt_female">Female</string>
     <string name="txt_image">Image</string>
+    <string name="txt_profile">Profile</string>
+    <string name="txt_gold_member">Gold Member</string>
+    <string name="txt_information">Information</string>
+    <string name="txt_user_name">User Name</string>
+    <string name="txt_phone_number">Phone Number</string>
+    <string name="txt_email">Email</string>
+    <string name="txt_gender">Gender</string>
+    <string name="txt_date_of_birth">Date Of Birth</string>
+    <string name="txt_address">Address</string>
+    <string name="txt_submit">Submit</string>
+    <string name="txt_enter_address">Enter Address</string>
+    <string name="txt_logout">Logout</string>
+    <string name="msg_logout">Are you sure you want to logout?</string>
+
 </resources>

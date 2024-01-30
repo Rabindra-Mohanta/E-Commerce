@@ -13,7 +13,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 class TabFragmentStateAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fragmentManager, lifecycle) {
     override fun getItemCount(): Int {
-        return 5
+        return 4
     }
 
     override fun createFragment(position: Int): Fragment {
@@ -21,8 +21,7 @@ class TabFragmentStateAdapter(fragmentManager: FragmentManager, lifecycle: Lifec
             0 -> HomeFragment()
             1 -> OrderedFragment()
             2 -> CartFragment()
-            3 -> ProfileFragment()
-            4 -> FavoriteFragment()
+            3 -> FavoriteFragment()
             else ->
                 HomeFragment()
 

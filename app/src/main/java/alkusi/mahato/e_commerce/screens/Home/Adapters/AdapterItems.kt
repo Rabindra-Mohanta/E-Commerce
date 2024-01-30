@@ -1,3 +1,4 @@
+/*
 package alkusi.mahato.e_commerce.screens.Home.Adapters
 
 import android.content.Context
@@ -99,4 +100,4 @@ class AdapterItems(
 
     }
 
-}
+}*/

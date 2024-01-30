@@ -1,18 +1,16 @@
+/*
 package alkusi.mahato.e_commerce.screens.Cart.Adapters
+
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
-import com.bumptech.glide.Glide
-import com.example.rabindra.constants.Constants
-import com.example.rabindra.databinding.ItemCartBinding
-import com.example.rabindra.screens.dao.ProductDao
+
 import com.example.rabindra.screens.models.Items
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class AdapterCart(
-    private val list: ArrayList<Pair<Items, Int>>,
-    private val productDao: ProductDao, private val onItemCountChange: () -> Unit
+    private val list: ArrayList<Pair<Items, Int>>, private val onItemCountChange: () -> Unit
 ) : RecyclerView.Adapter<AdapterCart.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemCartBinding.inflate(LayoutInflater.from(parent.context))
@@ -84,4 +82,4 @@ class AdapterCart(
 
     }
 
-}
+}*/

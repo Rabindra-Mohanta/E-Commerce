@@ -1,3 +1,4 @@
+/*
 package alkusi.mahato.e_commerce.screens.Home.Adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -36,4 +37,4 @@ class HomeAdapter(
         }
     }
 
-}
+}*/

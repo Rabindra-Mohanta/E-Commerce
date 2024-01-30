@@ -20,4 +20,5 @@
     <string name="txt_all">All</string>
     <string name="txt_male">Male</string>
     <string name="txt_female">Female</string>
+    <string name="txt_image">Image</string>
 </resources>

@@ -1,3 +1,4 @@
+/*
 package alkusi.mahato.e_commerce.screens.Favorite.Adapters
 
 import android.content.Context
@@ -86,3 +87,4 @@ class AdapterFavorite(
         }
     }
 }
+*/

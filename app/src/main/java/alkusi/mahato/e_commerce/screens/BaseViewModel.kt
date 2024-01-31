@@ -1,12 +1,10 @@
 package alkusi.mahato.e_commerce.screens
-
 import alkusi.mahato.e_commerce.R
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.widget.Toast
 import androidx.lifecycle.ViewModel
-
 open class BaseViewModel:ViewModel() {
     fun isConnectionAvailable(context: Context):Boolean
     {

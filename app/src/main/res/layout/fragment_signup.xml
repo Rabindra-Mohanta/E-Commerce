@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="alkusi.mahato.e_commerce.screens.SignupViewModel" />
+    </data>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -24,6 +30,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+           
 
             <TextView
                 android:id="@+id/txtSignUp"
@@ -52,6 +59,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_bg"
+                    android:text="@={viewModel.edtName}"
                     android:hint="@string/txt_enter_name"
                     android:inputType="textCapWords" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -69,6 +77,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtEmail"
+                    android:text="@={viewModel.edtEmail}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_bg"
@@ -90,6 +99,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtPassword"
+                    android:text="@={viewModel.edtPassword}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_bg"
@@ -110,25 +120,37 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtConfirmPassword"
+                    android:text="@={viewModel.edtConfirmPassword}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_bg"
                     android:hint="@string/txt_enter_confirm_pass"
                     android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
-            <Button
+            <android.widget.Button
+                android:onClick="@{viewModel::onCreateClick}"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_45sdp"
+                android:layout_height="@dimen/_40sdp"
                 android:layout_marginHorizontal="@dimen/_30sdp"
                 android:text="@string/txt_create"
                 android:textAllCaps="true"
+                android:background="@drawable/button_bg"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textFieldConfirmPassword" />
-
+            <ProgressBar
+                android:visibility="@{viewModel.isProgressBarVisible()?View.VISIBLE:View.GONE}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
+   
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

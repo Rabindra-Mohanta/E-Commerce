@@ -2,6 +2,9 @@
 <layout>
 
     <data>
+
+        <import type="android.view.View" />
+
         <variable
             name="viewModel"
             type="alkusi.mahato.e_commerce.screens.LoginViewModel" />
@@ -46,10 +49,9 @@
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-
-
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textFieldEmail"
+                    app:placeholderTextColor="@color/black"
                     style=""
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -65,8 +67,8 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/button_bg"
                         android:hint="@string/txt_enter_email"
-                        android:text="@={viewModel.edtEmail}"
-                        android:inputType="textEmailAddress" />
+                        android:inputType="textEmailAddress"
+                        android:text="@={viewModel.edtEmail}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -83,12 +85,12 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtPassword"
-                        android:text="@={viewModel.edtPassword}"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/button_bg"
                         android:hint="@string/txt_enter_password"
-                        android:inputType="textPassword" />
+                        android:inputType="textPassword"
+                        android:text="@={viewModel.edtPassword}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
@@ -103,25 +105,36 @@
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textFieldPassword" />
 
-                <Button
+                <android.widget.Button
+                    android:background="@drawable/button_bg"
                     android:id="@+id/btnLogin"
-                    android:enabled="@{viewModel.isEnableLoginBtn}"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_45sdp"
+                    android:layout_height="@dimen/_40sdp"
                     android:layout_marginHorizontal="@dimen/_30sdp"
                     android:layout_marginTop="@dimen/_30sdp"
+                    android:enabled="@{viewModel.isEnableLoginBtn}"
                     android:onClick="@{viewModel.onLoginBtnClick}"
                     android:text="@string/txt_login"
                     android:textAllCaps="true"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtForgotPass" />
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{viewModel.isProgressBarVisible?View.VISIBLE:View.GONE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
-        <Button
+        <android.widget.Button
+            android:background="@drawable/button_bg"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_45sdp"
+            android:layout_height="@dimen/_40sdp"
             android:layout_marginHorizontal="@dimen/_30sdp"
             android:onClick="@{viewModel.onSignupBtnClick}"
             android:text="@string/txt_register"

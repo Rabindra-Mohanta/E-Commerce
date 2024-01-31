@@ -39,4 +39,9 @@
     <string name="txt_only_for_you">Only For You</string>
     <string name="msg_no_internet">No network available please connect and try again</string>
     <string name="msg_plz_enter_valid_login">Please enter valid login details</string>
+    <string name="msg_enter_valid_password">Enter valid password</string>
+    <string name="msg_enter_valid_details">Please Enter valid details</string>
+    <string name="something_went_wrong">Something went wrong try again</string>
+    <string name="txt_success">Success</string>
+    <string name="msg_plz_check_your_email">Please check your mail and reset password</string>
 </resources>

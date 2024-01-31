@@ -14,7 +14,7 @@
 
     <application
         android:allowBackup="true"
-        android:name=".MyECommerce"
+        android:name=".screens.Config.MyECommerce"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -24,6 +24,8 @@
         android:theme="@style/Theme.ECommerce"
         tools:targetApi="34">
         <activity
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

@@ -1,4 +1,4 @@
-package alkusi.mahato.e_commerce
+package alkusi.mahato.e_commerce.screens.Config
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

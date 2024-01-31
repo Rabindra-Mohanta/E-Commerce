@@ -37,4 +37,6 @@
     <string name="txt_add_to_cart">Add to cart</string>
     <string name="txt_buy_now">Buy now</string>
     <string name="txt_only_for_you">Only For You</string>
+    <string name="msg_no_internet">No network available please connect and try again</string>
+    <string name="msg_plz_enter_valid_login">Please enter valid login details</string>
 </resources>

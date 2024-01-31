@@ -8,6 +8,9 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 
 class ProfileFragment : BaseFragment<FragmentProfileBinding>(R.layout.fragment_profile) {
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
@@ -30,10 +33,9 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(R.layout.fragment_p
             android.R.id.home -> {
                 //this is for handle backPress
                 requireActivity().onBackPressed()
-
             }
-
         }
         return super.onOptionsItemSelected(item)
     }
+
 }

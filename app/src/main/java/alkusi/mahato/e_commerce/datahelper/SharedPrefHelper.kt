@@ -1,6 +1,6 @@
 package alkusi.mahato.e_commerce.datahelper
 
-import alkusi.mahato.e_commerce.screens.Constants.MyConstants
+import alkusi.mahato.e_commerce.Constants.MyConstants
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject

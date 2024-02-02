@@ -2,7 +2,7 @@ package alkusi.mahato.e_commerce.screens
 
 import alkusi.mahato.e_commerce.R
 import alkusi.mahato.e_commerce.datahelper.SharedPrefHelper
-import alkusi.mahato.e_commerce.screens.Constants.MyConstants
+import alkusi.mahato.e_commerce.Constants.MyConstants
 import android.content.Context
 import android.view.View
 import android.widget.Toast

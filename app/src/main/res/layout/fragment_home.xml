@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 
-
+<data>
+    <import type="android.view.View"/>
+    <variable
+        name="viewModel"
+        type="alkusi.mahato.e_commerce.screens.HomeViewModel" />
+</data>
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -13,7 +18,7 @@
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
+            android:visibility="@{viewModel.isProgressbarVisible()?View.VISIBLE:View.GONE}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -47,13 +52,13 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/txtAll"
+                android:id="@+id/txtElectronics"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/gender_filter_bg"
                 android:gravity="center"
-                android:text="@string/txt_all"
+                android:text="@string/txt_electronics"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_15ssp" />
 
@@ -82,6 +87,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginHorizontal="@dimen/_10sdp"

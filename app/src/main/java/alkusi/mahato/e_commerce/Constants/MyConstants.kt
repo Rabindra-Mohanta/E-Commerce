@@ -1,4 +1,4 @@
-package alkusi.mahato.e_commerce.screens.Constants
+package alkusi.mahato.e_commerce.Constants
 
 object MyConstants {
     const val USERS = "USERS"
@@ -11,4 +11,5 @@ object MyConstants {
     const val SHARE_PREF_NAME = "RABI_SHARED"
     const val IS_USER_LOGIN = "IS_USER_LOGIN"
     const val CHECK_EMAIL = "@gmail.com"
+
 }

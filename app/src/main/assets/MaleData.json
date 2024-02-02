@@ -1,0 +1,195 @@
+{
+  "male": {
+    "traditional": [
+      {
+        "title": "Blue Ombre Silk Jacket",
+        "image": "https://shreeman.in/cdn/shop/files/1J8A0896.jpg?v:1697717725&width:800",
+        "originalPrice": "3999",
+        "offerPrice": "2999"
+      },
+      {
+        "title": "Pastel Yellow Kurta Set",
+        "image": "https://shreeman.in/cdn/shop/files/29-06-2023H_H2845.jpg?v:1698996022&width",
+        "originalPrice": "4499",
+        "offerPrice": "4299"
+      },
+      {
+        "title": "Red Kurta Set with Bandhani Print",
+        "image": "https://shreeman.in/cdn/shop/files/1J8A0629.jpg?v:1697712433&width:600",
+        "originalPrice": "2999",
+        "offerPrice": "2599"
+      },
+      {
+        "title": "Yellow Kurta Set with Bandhani Print",
+        "image": "https://shreeman.in/cdn/shop/files/1J8A0542.jpg?v:1697710995&width:600",
+        "originalPrice": "3599",
+        "offerPrice": "3399"
+      },
+      {
+        "title": "Ivory Kurta Set with Resham Thread work",
+        "image": "https://shreeman.in/cdn/shop/files/1J8A0259.jpg?v:1697702012&width:600",
+        "originalPrice": "3999",
+        "offerPrice": "3599"
+      },
+      {
+        "title": "Beige Embroidered Silk open Jacket",
+        "image": "https://shreeman.in/cdn/shop/files/1J8A7861.jpg?v:1695803095&width:600",
+        "originalPrice": "5999",
+        "offerPrice": "5000"
+      },
+      {
+        "title": "Silk Jodhpuri Jacket with silk Straight Pant",
+        "image": "https://shreeman.in/cdn/shop/products/1J8A1029.jpg?v:1687154861&width:600",
+        "originalPrice": "8999",
+        "offerPrice": "7999"
+      },
+      {
+        "title": "Yellow Jodhpuri Set with Lakhnavi Embroidery",
+        "image": "https://shreeman.in/cdn/shop/products/Shreeman1549.jpg?v:1659448574&width:600",
+        "originalPrice": "6999",
+        "offerPrice": "5999"
+      },
+      {
+        "title": "Pink Silk Jodhpuri Top",
+        "image": "https://shreeman.in/cdn/shop/products/Shreeman2910.jpg?v:1653137054&width:600",
+        "originalPrice": "3999",
+        "offerPrice": "3499"
+      },
+      {
+        "title": "Bottle Green Textured Jodhpuri Suit",
+        "image": "https://shreeman.in/cdn/shop/products/Shreeman000058.jpg?v:1652086001&width:600",
+        "originalPrice": "3999",
+        "offerPrice": "3399"
+      }
+    ],
+    "western": [
+      {
+        "title": "Mens Maroon Solid Pure Cotton Shirt",
+        "image": "https://www.jiomart.com/images/product/original/rvtl2pboia/design-up-mens-maroon-solid-pure-cotton-shirt-xl-shirt-shirts-cotton-shirt-cotton-shirts-casual-shirts-formal-shirts-cotton-men-shirt-men-shirts-product-images-rvtl2pboia-0-202211010626.jpg?im:Resize:(600,750)",
+        "originalPrice": "799",
+        "offerPrice": "699"
+      },
+      {
+        "title": "Checked Slim Fit Shirt",
+        "image": "https://www.jiomart.com/images/product/original/443008885_white/np-34-checked-slim-fit-shirt-model-443008885_white-0-202301191502.jpg?im:Resize:(600,750)",
+        "originalPrice": "899",
+        "offerPrice": "799"
+      },
+      {
+        "title": "Printed Slim Fit Cotton Shirt",
+        "image": "https://www.jiomart.com/images/product/original/443009721_blue/printed-slim-fit-cotton-shirt-model-443009721_blue-0-202304151951.jpg?im:Resize:(330,410)",
+        "originalPrice": "849",
+        "offerPrice": "699"
+      },
+      {
+        "title": "Men Slim fit Shirt with Patch Pockets",
+        "image": "https://www.jiomart.com/images/product/original/469218293_red/slim-fit-shirt-with-patch-pockets-model-469218293_red-0-202301082027.jpg?im:Resize:(330,410)",
+        "originalPrice": "749",
+        "offerPrice": "599"
+      },
+      {
+        "title": "Men Checked Slim Fit shirt with Button Down Collar",
+        "image": "https://www.jiomart.com/images/product/original/443009723_khaki/checked-slim-fit-shirt-with-button-down-collar-model-443009723_khaki-0-202302151229.jpg?im:Resize:(330,410)",
+        "originalPrice": "599",
+        "offerPrice": "499"
+      },
+      {
+        "title": "Men Checked Slim Fit shirt with Button Down Collar",
+        "image": "https://www.jiomart.com/images/product/original/443009723_khaki/checked-slim-fit-shirt-with-button-down-collar-model-443009723_khaki-0-202302151229.jpg?im:Resize:(330,410)",
+        "originalPrice": "599",
+        "offerPrice": "499"
+      },
+      {
+        "title": "Eyebogler Mens Henley Neck Regular Fit Shirt",
+        "image": "https://www.jiomart.com/images/product/original/rvsjd3qiu4/eyebogler-mens-henley-neck-regular-fit-full-length-sleeve-t-shirt-product-images-rvsjd3qiu4-0-202302021731.jpg?im:Resize:(330,410)",
+        "originalPrice": "699",
+        "offerPrice": "599"
+      },
+      {
+        "title": "Alif Creations Hi Neck Sweat Shirt",
+        "image": "https://www.jiomart.com/images/product/original/rv3wgctrtb/alif-creations-hi-neck-full-sleeve-sweatshirts-for-mens-xxl-product-images-rv3wgctrtb-0-202307311753.jpg?im:Resize:(330,410)",
+        "originalPrice": "499",
+        "offerPrice": "399"
+      },
+      {
+        "title": "Graphic Print Slim Fit Tshirt",
+        "image": "https://www.jiomart.com/images/product/original/441146094_jetblack/graphic-print-slim-fit-crew-neck-t-shirt-model-441146094_jetblack-0-202209092221.jpg?im:Resize:(330,410)",
+        "originalPrice": "599",
+        "offerPrice": "549"
+      },
+      {
+        "title": "Ausk Printed Aqua & Black Full sleeve Hooded tshirt",
+        "image": "https://www.jiomart.com/images/product/original/rv2bjncotr/ausk-printed-aqua-black-full-sleeve-hooded-t-shirt-product-images-rv2bjncotr-0-202311091817.jpg?im:Resize:(330,410)",
+        "originalPrice": "699",
+        "offerPrice": "599"
+      },
+      {
+        "title": "Bullmer Men Olive Cotton Blend Printed Sweat Shirt",
+        "image": "https://www.jiomart.com/images/product/original/rvsnbhsk9r/bullmer-men-olive-cotton-blend-printed-single-sweatshirts-product-images-rvsnbhsk9r-0-202210291840.jpg?im:Resize:(330,410)",
+        "originalPrice": "599",
+        "offerPrice": "499"
+      },
+      {
+        "title": "Mid-Wash Skinny Fit Jeans",
+        "image": "https://www.jiomart.com/images/product/original/469173047_blue/mid-wash-skinny-fit-jeans-model-469173047_blue-0-202301091203.jpg?im:Resize:(330,410)",
+        "originalPrice": "599",
+        "offerPrice": "499"
+      },
+      {
+        "title": "Podge Men’s Slim Fit Black Jeans",
+        "image": "https://www.jiomart.com/images/product/original/rvu5alp4xf/podge-men-s-slim-fit-black-jeans-product-images-rvu5alp4xf-0-202211301604.jpg?im:Resize:(330,410)",
+        "originalPrice": "899",
+        "offerPrice": "699"
+      },
+      {
+        "title": "Flat-Front Slim Fit trousers",
+        "image": "https://www.jiomart.com/images/product/original/443001130_navy/flat-front-slim-fit-trousers-model-443001130_navy-0-202301170054.jpg?im:Resize:(330,410)",
+        "originalPrice": "899",
+        "offerPrice": "599"
+      },
+      {
+        "title": "Podge Men Slim Fit Denim Mid rise Blue Jeans",
+        "image": "https://www.jiomart.com/images/product/original/rvxcqth6du/podge-men-slim-fit-denim-mid-rise-black-jeans-product-images-rvxcqth6du-0-202302210939.jpg?im:Resize:(330,410)",
+        "originalPrice": "699",
+        "offerPrice": "599"
+      },
+      {
+        "title": "Men Active Regular Fit Track Suit",
+        "image": "https://www.jiomart.com/images/product/original/443028665_ltgrey/men-active-regular-fit-tracksuit-model-443028665_ltgrey-0-202310240700.jpg?im:Resize:(330,410)",
+        "originalPrice": "599",
+        "offerPrice": "499"
+      },
+      {
+        "title": "Bruton Trendy Sports Shoes",
+        "image": "https://www.jiomart.com/images/product/original/rvrgwpjvsp/bruton-trendy-sports-shoes-for-men-blue-product-images-rvrgwpjvsp-0-202209021256.jpg?im:Resize:(330,410)",
+        "originalPrice": "699",
+        "offerPrice": "599"
+      },
+      {
+        "title": "Aadi Men’s Black Mesh Running Sport",
+        "image": "https://www.jiomart.com/images/product/original/rvsuwqn6ol/aadi-men-s-black-mesh-running-sport-shoes-product-images-rvsuwqn6ol-0-202304211147.jpg?im:Resize:(330,410)",
+        "originalPrice": "999",
+        "offerPrice": "899"
+      },
+      {
+        "title": "Bruton Fit man Running shoes",
+        "image": "https://www.jiomart.com/images/product/original/rvy1azbd1c/bruton-fit-man-running-shoes-for-men-grey-product-images-rvy1azbd1c-0-202401111257.jpg?im:Resize:(330,410)",
+        "originalPrice": "1099",
+        "offerPrice": "949"
+      },
+      {
+        "title": "Prodock Lace Up Sports Shoes",
+        "image": "https://www.jiomart.com/images/product/original/rvu5f9v4ey/prodock-lace-up-sports-running-shoes-for-men-grey-product-images-rvu5f9v4ey-0-202310292352.jpg?im:Resize:(330,410)",
+        "originalPrice": "999",
+        "offerPrice": "899"
+      },
+      {
+        "title": "Woodland Men Camel Shoes",
+        "image": "https://www.jiomart.com/images/product/original/469458080_beige/woodland-men-camel-shoes-product-images-469458080_beige-0-202312061407.jpg?im:Resize:(600,750)",
+        "originalPrice": "2099",
+        "offerPrice": "1899"
+      }
+    ]
+  }
+}
+

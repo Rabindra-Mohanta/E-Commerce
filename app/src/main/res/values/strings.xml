@@ -18,6 +18,7 @@
     <string name="txt_favorite">Favorite</string>
     <string name="txt_no_data_found">No data found</string>
     <string name="txt_all">All</string>
+    <string name="txt_electronics">Electronics</string>
     <string name="txt_male">Male</string>
     <string name="txt_female">Female</string>
     <string name="txt_image">Image</string>
@@ -43,5 +44,7 @@
     <string name="msg_enter_valid_details">Please Enter valid details</string>
     <string name="something_went_wrong">Something went wrong try again</string>
     <string name="txt_success">Success</string>
+    <string name="txt_original_price">Original Price:</string>
+    <string name="txt_in_offer">In Offer:</string>
     <string name="msg_plz_check_your_email">Please check your mail and reset password</string>
 </resources>

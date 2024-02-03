@@ -35,6 +35,8 @@
     <string name="txt_enter_address">Enter Address</string>
     <string name="txt_logout">Logout</string>
     <string name="msg_logout">Are you sure you want to logout?</string>
+    <string name="msg_added_card">Are you sure want to add to card this?</string>
+    <string name="msg_added_buy">Are you sure want to buy this item  it will deliver to your saved address in profile and payment mode will be case on delivery?</string>
     <string name="txt_add_to_cart">Add to cart</string>
     <string name="txt_buy_now">Buy now</string>
     <string name="txt_only_for_you">Only For You</string>

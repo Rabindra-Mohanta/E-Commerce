@@ -3,6 +3,7 @@ package alkusi.mahato.e_commerce.screens.Home.Adapters
 import alkusi.mahato.e_commerce.R
 import alkusi.mahato.e_commerce.databinding.SingleShoppingItemBinding
 import alkusi.mahato.e_commerce.screens.NormalData
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -23,6 +24,7 @@ class NormalDataAdapter(private val dataList:List<NormalData>, private val onIte
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data1 = dataList[position]
         holder.binding.data = data1
+        holder.binding.originalAmount.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
         holder.itemView.setOnClickListener {
             onItemClick.invoke(data1)
         }

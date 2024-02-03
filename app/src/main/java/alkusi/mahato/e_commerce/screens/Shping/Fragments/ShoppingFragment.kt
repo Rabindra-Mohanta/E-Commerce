@@ -5,11 +5,17 @@ import alkusi.mahato.e_commerce.databinding.FragmentShoppingBinding
 import alkusi.mahato.e_commerce.library.views.BaseFragment
 import alkusi.mahato.e_commerce.screens.NormalData
 import alkusi.mahato.e_commerce.screens.ShoppingFragmentViewModel
+import android.app.Dialog
+import android.graphics.Paint
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import com.google.gson.Gson
+import com.saadahmedsoft.popupdialog.PopupDialog
+import com.saadahmedsoft.popupdialog.Styles
+import com.saadahmedsoft.popupdialog.listener.OnDialogButtonClickListener
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -26,8 +32,13 @@ class ShoppingFragment : BaseFragment<FragmentShoppingBinding>(R.layout.fragment
     }
     override fun FragmentShoppingBinding.initialize() {
         binding.viewModel = shoppingFragmentViewModel
+        shoppingFragmentViewModel.productOriginalPrice.value = normalData!!.originalPrice.toLong()
+        shoppingFragmentViewModel.productOfferPrice.value = normalData!!.offerPrice.toLong()
         shoppingFragmentViewModel.normalData.set(normalData)
         setToolbar()
+        initClicks()
+        //set old amount stick
+        binding.txtOldPrice.paintFlags  = Paint.STRIKE_THRU_TEXT_FLAG
     }
     private fun setToolbar() {
         val activity = (requireActivity() as AppCompatActivity)
@@ -46,5 +57,59 @@ class ShoppingFragment : BaseFragment<FragmentShoppingBinding>(R.layout.fragment
         }
         return super.onOptionsItemSelected(item)
     }
+    private fun initClicks()
+    {
+        binding.btnAddToCart.setOnClickListener {
+            showAddCartDialog()
+        }
+        binding.btnBuyNow.setOnClickListener {
+            showBuyDialog()
+        }
+    }
+    private fun showAddCartDialog() {
+        PopupDialog.getInstance(requireContext())
+            .setStyle(Styles.STANDARD)
+            .setHeading(requireContext().getString(R.string.txt_add_to_cart))
+            .setDescription(
+                resources.getString(R.string.msg_added_card)
+            )
+            .setPopupDialogIcon(R.drawable.icon_cart)
+            .setPopupDialogIconTint(R.color.colorStatusBar)
+            .setCancelable(false)
+            .showDialog(object : OnDialogButtonClickListener() {
+                override fun onPositiveClicked(dialog: Dialog) {
+                    super.onPositiveClicked(dialog)
+                    Toast.makeText(requireContext(),getString(R.string.txt_success), Toast.LENGTH_SHORT).show()
+                    shoppingFragmentViewModel.isEnableCartBtn.set(false)
 
+                }
+
+                override fun onNegativeClicked(dialog: Dialog) {
+                    super.onNegativeClicked(dialog)
+                }
+            })
+    }
+    private fun showBuyDialog() {
+        PopupDialog.getInstance(requireContext())
+            .setStyle(Styles.STANDARD)
+            .setHeading(resources.getString(R.string.txt_buy_now))
+            .setDescription(
+                resources.getString(R.string.msg_added_buy)
+            )
+            .setPopupDialogIcon(R.drawable.icon_order)
+            .setPopupDialogIconTint(R.color.colorStatusBar)
+            .setCancelable(false)
+            .showDialog(object : OnDialogButtonClickListener() {
+                override fun onPositiveClicked(dialog: Dialog) {
+                    super.onPositiveClicked(dialog)
+                    Toast.makeText(requireContext(),getString(R.string.txt_success), Toast.LENGTH_SHORT).show()
+                    shoppingFragmentViewModel.isEnableBuyNowBtn.set(false)
+
+                }
+
+                override fun onNegativeClicked(dialog: Dialog) {
+                    super.onNegativeClicked(dialog)
+                }
+            })
+    }
 }

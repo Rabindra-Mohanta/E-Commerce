@@ -1,117 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 
+    <data>
+
+        <variable
+            name="data"
+            type="alkusi.mahato.e_commerce.screens.NormalData" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/_20sdp">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="@dimen/_140sdp"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_5sdp"
-            android:background="?attr/selectableItemBackground"
-            android:elevation="@dimen/_20sdp"
-            app:cardCornerRadius="@dimen/_7sdp"
-            app:cardUseCompatPadding="true"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <ImageView
+                android:id="@+id/imgProduct"
+                android:scaleType="fitXY"
+                imageFromUrl="@{data.image}"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/imgProduct"
-                    android:layout_width="@dimen/_90sdp"
-                    android:layout_height="@dimen/_100sdp"
-                    android:src="@color/gery"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.225" />
+                android:layout_height="@dimen/_250sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
-                <TextView
-                    android:id="@+id/txtProductName"
-                    style="@style/MyTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingHorizontal="@dimen/_5sdp"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:singleLine="true"
-                    android:textSize="@dimen/_13ssp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintHorizontal_bias="0.19"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imgProduct"
-                    app:layout_constraintVertical_bias="0.07999998" />
+            <TextView
+                android:id="@+id/txtProductName"
+                style="@style/MyTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:singleLine="true"
+                android:text="@{data.title}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.19"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgProduct"
+                app:layout_constraintVertical_bias="0.07999998" />
 
 
-                <TextView
-                    android:id="@+id/txtPrice"
-                    style="@style/MyTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingHorizontal="@dimen/_5sdp"
-                    android:text="@string/txt_original_price"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtProductName"
-                    app:layout_constraintVertical_bias="0.050000012" />
+            <TextView
+                android:id="@+id/txtPrice"
+                style="@style/MyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:text="@string/txt_original_price"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtProductName"
+                app:layout_constraintVertical_bias="0.050000012" />
 
-                <TextView
-                    android:id="@+id/originalAmount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@{`₹`}"
-                    app:layout_constraintBottom_toBottomOf="@+id/txtPrice"
-                    app:layout_constraintLeft_toRightOf="@+id/txtPrice"
-                    app:layout_constraintTop_toTopOf="@+id/txtPrice" />
+            <TextView
+                android:id="@+id/originalAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`₹`+data.offerPrice}"
+                app:layout_constraintBottom_toBottomOf="@+id/txtPrice"
+                app:layout_constraintLeft_toRightOf="@+id/txtPrice"
+                app:layout_constraintTop_toTopOf="@+id/txtPrice" />
 
-                <TextView
-                    android:id="@+id/txtInOffer"
-                    android:layout_marginBottom="@dimen/_3sdp"
-                    style="@style/MyTextView"
-                    android:gravity="start"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_2sdp"
-                    android:paddingHorizontal="@dimen/_5sdp"
-                    android:text="@string/txt_in_offer"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtPrice"
-                    app:layout_constraintVertical_bias="0.050000012" />
+            <TextView
+                android:id="@+id/txtInOffer"
+                style="@style/MyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:gravity="start"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:text="@string/txt_you_have_to_pay"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtPrice"
+                app:layout_constraintVertical_bias="0.050000012" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@{`₹`}"
-                    app:layout_constraintBottom_toBottomOf="@+id/txtInOffer"
-                    app:layout_constraintLeft_toRightOf="@+id/txtInOffer"
-                    app:layout_constraintTop_toTopOf="@+id/txtInOffer" />
-                <TextView
-                    android:id="@+id/txtOrderedCount"
-                    android:layout_marginBottom="@dimen/_3sdp"
-                    style="@style/MyTextView"
-                    android:gravity="start"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_2sdp"
-                    android:paddingHorizontal="@dimen/_5sdp"
-                    android:text="@{`Item count:`}"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtInOffer"
-                    app:layout_constraintVertical_bias="0.050000012" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/txtPrice1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`₹`+data.offerPrice}"
+                app:layout_constraintBottom_toBottomOf="@+id/txtInOffer"
+                app:layout_constraintLeft_toRightOf="@+id/txtInOffer"
+                app:layout_constraintTop_toTopOf="@+id/txtInOffer" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

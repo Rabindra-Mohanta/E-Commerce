@@ -1,8 +1,8 @@
 package alkusi.mahato.e_commerce.Constants
 
 object MyConstants {
-    const val CARTDATA = "CART DATA"
-    const val ORDEREDDATA = "ORDERED DATA"
+    const val CART = "cart"
+    const val Ordered = "Ordered"
     const val USERS = "USERS"
     const val EMAIL = "EMAIL"
     const val PASSWORD = "PASSWORD"

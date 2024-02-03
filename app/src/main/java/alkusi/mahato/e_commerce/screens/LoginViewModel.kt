@@ -2,6 +2,7 @@ package alkusi.mahato.e_commerce.screens
 
 import alkusi.mahato.e_commerce.R
 import alkusi.mahato.e_commerce.Constants.MyConstants
+import alkusi.mahato.e_commerce.datahelper.SharedPrefHelper
 import android.content.Context
 import android.text.TextUtils
 import android.view.View
@@ -18,7 +19,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
-    @ApplicationContext private val context: Context
+    @ApplicationContext private val context: Context,private val sharedPrefHelper:SharedPrefHelper
 ) : BaseViewModel() {
     var firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
     private var firebaseFirestore: FirebaseFirestore = FirebaseFirestore.getInstance()
@@ -64,6 +65,7 @@ class LoginViewModel @Inject constructor(
                 edtPassword.value.toString()
             ).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
+                    saveLoginDataToSharedPref()
                     isNavigateToHome.value = true
                     isEnableLoginBtn.set(true)
                     //progress bar
@@ -108,6 +110,9 @@ class LoginViewModel @Inject constructor(
 
         }
     }
-
+    private fun saveLoginDataToSharedPref() {
+        sharedPrefHelper.setString(MyConstants.EMAIL, edtEmail.value.toString())
+        sharedPrefHelper.setString(MyConstants.PASSWORD, edtPassword.value.toString())
+    }
 
 }

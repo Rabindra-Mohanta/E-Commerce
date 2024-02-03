@@ -79,8 +79,7 @@ class ShoppingFragment : BaseFragment<FragmentShoppingBinding>(R.layout.fragment
             .showDialog(object : OnDialogButtonClickListener() {
                 override fun onPositiveClicked(dialog: Dialog) {
                     super.onPositiveClicked(dialog)
-                    Toast.makeText(requireContext(),getString(R.string.txt_success), Toast.LENGTH_SHORT).show()
-                    shoppingFragmentViewModel.isEnableCartBtn.set(false)
+                    shoppingFragmentViewModel.callCartApi(normalData!!.title)
 
                 }
 
@@ -102,8 +101,7 @@ class ShoppingFragment : BaseFragment<FragmentShoppingBinding>(R.layout.fragment
             .showDialog(object : OnDialogButtonClickListener() {
                 override fun onPositiveClicked(dialog: Dialog) {
                     super.onPositiveClicked(dialog)
-                    Toast.makeText(requireContext(),getString(R.string.txt_success), Toast.LENGTH_SHORT).show()
-                    shoppingFragmentViewModel.isEnableBuyNowBtn.set(false)
+                    shoppingFragmentViewModel.callBuyDataApi(normalData!!.title)
 
                 }
 

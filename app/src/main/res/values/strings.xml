@@ -48,5 +48,6 @@
     <string name="txt_success">Success</string>
     <string name="txt_original_price">Original Price:</string>
     <string name="txt_in_offer">In Offer:</string>
+    <string name="txt_you_have_to_pay">You have to pay:</string>
     <string name="msg_plz_check_your_email">Please check your mail and reset password</string>
 </resources>

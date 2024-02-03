@@ -13,5 +13,6 @@ object MyConstants {
     const val CHECK_EMAIL = "@gmail.com"
     const val Traditional = "Traditional"
     const val Western = "western"
+    const val data = "data"
 
 }

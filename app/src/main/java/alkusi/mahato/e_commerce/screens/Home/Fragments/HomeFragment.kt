@@ -1,11 +1,13 @@
 package alkusi.mahato.e_commerce.screens.Home.Fragments
 
+import alkusi.mahato.e_commerce.Constants.MyConstants
 import alkusi.mahato.e_commerce.R
 import alkusi.mahato.e_commerce.databinding.FragmentHomeBinding
 import alkusi.mahato.e_commerce.library.views.BaseFragment
 import alkusi.mahato.e_commerce.screens.Home.Adapters.MaleFemaleDataAdapter
 import alkusi.mahato.e_commerce.screens.Home.Adapters.NormalDataAdapter
 import alkusi.mahato.e_commerce.screens.HomeViewModel
+import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -13,8 +15,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
-
-
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     private val homeViewModel by viewModels<HomeViewModel>()
@@ -36,7 +36,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
             GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
         val adapter =
             NormalDataAdapter(homeViewModel.loadElectronicsDataFromAssets().electronics) { data ->
-                findNavController().navigate(R.id.action_tabFragment_to_shoppingFragment)
+                val bundle = Bundle()
+                bundle.putString(MyConstants.data,Gson().toJson(data))
+                findNavController().navigate(R.id.shoppingFragment,bundle)
             }
         binding.recyclerView.adapter = adapter
         adapter.notifyDataSetChanged()
@@ -47,7 +49,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         binding.recyclerView.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         val adapter = MaleFemaleDataAdapter(homeViewModel.loadMaleJsonFromAssets()) { data ->
-            findNavController().navigate(R.id.action_tabFragment_to_shoppingFragment)
+            val bundle = Bundle()
+            bundle.putString(MyConstants.data,Gson().toJson(data))
+            findNavController().navigate(R.id.shoppingFragment,bundle)
         }
         binding.recyclerView.adapter = adapter
         adapter.notifyDataSetChanged()
@@ -58,7 +62,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         binding.recyclerView.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         val adapter = MaleFemaleDataAdapter(homeViewModel.loadFemaleDataFromAssets()) { data ->
-            findNavController().navigate(R.id.action_tabFragment_to_shoppingFragment)
+            val bundle = Bundle()
+            bundle.putString(MyConstants.data,Gson().toJson(data))
+            findNavController().navigate(R.id.shoppingFragment,bundle)
         }
         binding.recyclerView.adapter = adapter
         adapter.notifyDataSetChanged()

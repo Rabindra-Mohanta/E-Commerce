@@ -1,6 +1,5 @@
 {
-  "Female":{
-  "Traditional": [
+  "traditional": [
   {
     "title" : "Splendid Red Dark Saree",
     "image" : "https://manyavar.scene7.com/is/image/manyavar/I02_IMGL0071_25-02-2022-18-25:650x900",
@@ -116,7 +115,7 @@
     "offerPrice" : "1499"
   }
     ],
-"Western": [  {
+"western": [  {
 "title" : "Mint Blue Handblock printed cotton crop top",
 "image" : "https://d2x02matzb08hy.cloudfront.net/img/clothing/hero_image/781233124/medium_SSKR003-A.jpg",
 "originalPrice" : "999",
@@ -238,4 +237,4 @@
 }
 ]
 }
-}
+

@@ -11,5 +11,7 @@ object MyConstants {
     const val SHARE_PREF_NAME = "RABI_SHARED"
     const val IS_USER_LOGIN = "IS_USER_LOGIN"
     const val CHECK_EMAIL = "@gmail.com"
+    const val Traditional = "Traditional"
+    const val Western = "western"
 
 }

@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 
-class ElectronicsDataAdapter(private val dataList:List<NormalData>):RecyclerView.Adapter<ElectronicsDataAdapter.ViewHolder>() {
+class NormalDataAdapter(private val dataList:List<NormalData>, private val onItemClick:(NormalData)->Unit):RecyclerView.Adapter<NormalDataAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         val view = DataBindingUtil.inflate<SingleShoppingItemBinding>(LayoutInflater.from(parent.context),
@@ -23,6 +23,9 @@ class ElectronicsDataAdapter(private val dataList:List<NormalData>):RecyclerView
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data1 = dataList[position]
         holder.binding.data = data1
+        holder.itemView.setOnClickListener {
+            onItemClick.invoke(data1)
+        }
     }
     inner class ViewHolder(val binding:SingleShoppingItemBinding):RecyclerView.ViewHolder(binding.root)
     {

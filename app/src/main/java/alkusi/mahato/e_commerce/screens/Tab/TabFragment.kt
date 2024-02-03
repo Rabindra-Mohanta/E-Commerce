@@ -54,12 +54,7 @@ class TabFragment : BaseFragment<FragmentTabBinding>(R.layout.fragment_tab) {
 
         })
 
-        binding.viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageSelected(position: Int) {
-                super.onPageSelected(position)
-                binding.tabLayout.selectTab(binding.tabLayout.getTabAt(position))
-            }
-        })
+
     }
 
     @Deprecated("Deprecated in Java")

@@ -40,7 +40,7 @@
     <string name="txt_add_to_cart">Add to cart</string>
     <string name="txt_buy_now">Buy now</string>
     <string name="txt_only_for_you">Only For You</string>
-    <string name="msg_no_internet">No network available please connect and try again</string>
+    <string name="msg_no_internet">No network available</string>
     <string name="msg_plz_enter_valid_login">Please enter valid login details</string>
     <string name="msg_enter_valid_password">Enter valid password</string>
     <string name="msg_enter_valid_details">Please Enter valid details</string>
@@ -49,5 +49,9 @@
     <string name="txt_original_price">Original Price:</string>
     <string name="txt_in_offer">In Offer:</string>
     <string name="txt_you_have_to_pay">You have to pay:</string>
+    <string name="txt_cancel">Cancel</string>
+    <string name="msg_cancel_order">Are you sure want to cancel this order ?</string>
+    <string name="txt_remove">Remove</string>
+    <string name="msg_remove_dialog">Are you sure want to remove this item from cart ?</string>
     <string name="msg_plz_check_your_email">Please check your mail and reset password</string>
 </resources>

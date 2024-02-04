@@ -53,6 +53,7 @@ class SignupViewModel @Inject constructor(
         map[MyConstants.PROFILE] = ""
         map[MyConstants.ADDRESS] = ""
         map[MyConstants.CONTACT] = ""
+        map[MyConstants.GENDER] = ""
         firebaseFirestore.collection(MyConstants.USERS).document(edtEmail.value.toString()).set(map)
             .addOnSuccessListener(object : OnSuccessListener<Void> {
                 override fun onSuccess(p0: Void?) {

@@ -30,4 +30,9 @@ class SharedPrefHelper @Inject constructor(@ApplicationContext private val conte
         val data = sPref.getString(variableName, "")
         return data
     }
+    fun clearSharedPrefData()
+    {
+        sEdit.clear()
+        sEdit.apply()
+    }
 }

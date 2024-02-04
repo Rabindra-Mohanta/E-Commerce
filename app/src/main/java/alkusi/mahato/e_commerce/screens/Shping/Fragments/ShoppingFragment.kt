@@ -89,6 +89,12 @@ class ShoppingFragment : BaseFragment<FragmentShoppingBinding>(R.layout.fragment
             })
     }
     private fun showBuyDialog() {
+        if(shoppingFragmentViewModel.userAddress==null || shoppingFragmentViewModel.userAddress!!.isEmpty())
+        {
+            Toast.makeText(context,"Please update your profile before order ", Toast.LENGTH_SHORT)
+                .show()
+            return
+        }
         PopupDialog.getInstance(requireContext())
             .setStyle(Styles.STANDARD)
             .setHeading(resources.getString(R.string.txt_buy_now))

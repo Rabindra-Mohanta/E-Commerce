@@ -2,12 +2,16 @@ package alkusi.mahato.e_commerce.screens
 
 import alkusi.mahato.e_commerce.Constants.FileName
 import alkusi.mahato.e_commerce.Constants.MyConstants
+import alkusi.mahato.e_commerce.R
+import alkusi.mahato.e_commerce.RoomDb.MyRoomDb
 import alkusi.mahato.e_commerce.datahelper.SharedPrefHelper
 import alkusi.mahato.e_commerce.screens.Home.Model.ElectronicsDataRes
 import alkusi.mahato.e_commerce.screens.Home.Model.MaleFemaleDataRes
 import android.content.Context
+import android.widget.Toast
 import androidx.databinding.ObservableBoolean
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
 import com.google.common.reflect.TypeToken
@@ -16,13 +20,14 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.gson.Gson
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 
 @HiltViewModel
 class OrderedViewModel @Inject constructor(
     @ApplicationContext val context: Context,
-    private val sharedPrefHelper: SharedPrefHelper
+    private val sharedPrefHelper: SharedPrefHelper, private val myRoomDb: MyRoomDb
 ) : BaseViewModel() {
     val listOfData = ArrayList<NormalData>()
     val orderedDataList = MutableLiveData<List<NormalData>>()
@@ -30,6 +35,9 @@ class OrderedViewModel @Inject constructor(
     var firebaseFirestore: FirebaseFirestore = FirebaseFirestore.getInstance()
     var isProgressbarVisible = ObservableBoolean(false)
     var isNodataFound = ObservableBoolean(false)
+    var orderedTitleList = ArrayList<String>()
+    //data from local
+    val orderedDao = myRoomDb.getOrderedDao()
 
     init {
         listOfData.clear()
@@ -78,8 +86,10 @@ class OrderedViewModel @Inject constructor(
         return Gson().fromJson(json, type)
     }
 
-    private fun getOrderedData() {
+     fun getOrderedData() {
         if (!isConnectionAvailable(context)) {
+            viewModelScope.launch {  orderedDataList.value = orderedDao.getAllData()}
+
             showNoNetworkMsg(context)
             return
         }
@@ -90,7 +100,7 @@ class OrderedViewModel @Inject constructor(
                 if (task.isSuccessful) {
                     val result = task.result
                     if (result.get(MyConstants.Ordered) != null) {
-                        val orderedTitleList = ArrayList<String>()
+                        orderedTitleList.clear()
                         orderedTitleList.addAll(result.get(MyConstants.Ordered) as List<String>)
                          val ordered = ArrayList<NormalData>()
                         for (i in listOfData.indices) {
@@ -102,6 +112,10 @@ class OrderedViewModel @Inject constructor(
                                 }
                             }
                         }
+                        viewModelScope.launch {
+                            orderedDao.deleteAllData()
+                            orderedDao.insertData(ordered)
+                        }
                         isProgressbarVisible.set(false)
                         orderedDataList.value = ordered
 
@@ -111,5 +125,22 @@ class OrderedViewModel @Inject constructor(
             }
     }
 
+    fun cancelOrder(title:String?)
+    {
+        if (!isConnectionAvailable(context)) {
+            showNoNetworkMsg(context)
+            return
+        }
+        orderedTitleList.remove(title)
+        firebaseFirestore.collection(MyConstants.USERS)
+            .document(sharedPrefHelper.getString(MyConstants.EMAIL).toString())
+            .update(MyConstants.Ordered, orderedTitleList)
+            .addOnSuccessListener {
+                Toast.makeText(context, context.getString(R.string.txt_success), Toast.LENGTH_SHORT)
+                    .show()
+                getOrderedData()
+
+            }
+    }
 
 }

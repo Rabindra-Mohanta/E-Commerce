@@ -4,6 +4,10 @@
     <data>
 
         <variable
+            name="dateOfDelivery"
+            type="String" />
+
+        <variable
             name="data"
             type="alkusi.mahato.e_commerce.screens.NormalData" />
     </data>
@@ -12,54 +16,50 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10sdp"
-        >
+        android:layout_marginTop="@dimen/_10sdp">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginHorizontal="@dimen/_20sdp">
+            android:layout_marginHorizontal="@dimen/_10sdp">
 
             <ImageView
                 android:id="@+id/imgProduct"
-                android:scaleType="fitXY"
+                android:contentDescription="@string/txt_image"
                 imageFromUrl="@{data.image}"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_250sdp"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:scaleType="fitXY"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
 
             <TextView
                 android:id="@+id/txtProductName"
                 style="@style/MyTextView"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:paddingHorizontal="@dimen/_5sdp"
-                android:singleLine="true"
                 android:text="@{data.title}"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_13ssp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.19"
-                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/imgProduct"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imgProduct"
-                app:layout_constraintVertical_bias="0.07999998" />
-
+                app:layout_constraintTop_toTopOf="@id/imgProduct" />
 
             <TextView
                 android:id="@+id/txtPrice"
                 style="@style/MyTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
                 android:paddingHorizontal="@dimen/_5sdp"
                 android:text="@string/txt_original_price"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtProductName"
-                app:layout_constraintVertical_bias="0.050000012" />
+                app:layout_constraintLeft_toRightOf="@id/imgProduct"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtProductName" />
 
             <TextView
                 android:id="@+id/originalAmount"
@@ -75,15 +75,14 @@
                 style="@style/MyTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginBottom="@dimen/_3sdp"
                 android:gravity="start"
                 android:paddingHorizontal="@dimen/_5sdp"
                 android:text="@string/txt_you_have_to_pay"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtPrice"
-                app:layout_constraintVertical_bias="0.050000012" />
+                app:layout_constraintLeft_toRightOf="@id/imgProduct"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtPrice" />
 
             <TextView
                 android:id="@+id/txtPrice1"
@@ -93,8 +92,26 @@
                 app:layout_constraintBottom_toBottomOf="@+id/txtInOffer"
                 app:layout_constraintLeft_toRightOf="@+id/txtInOffer"
                 app:layout_constraintTop_toTopOf="@+id/txtInOffer" />
-
-
+            <android.widget.Button
+                android:id="@+id/btnCancel"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/txtInOffer"
+                app:layout_constraintLeft_toRightOf="@id/imgProduct"
+                app:layout_constraintRight_toRightOf="parent"
+                android:textColor="@color/red"
+                android:text="Cancel"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_30sdp"/>
+            <TextView
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@id/imgProduct"
+                app:layout_constraintRight_toRightOf="@+id/imgProduct"
+                app:layout_constraintTop_toBottomOf="@+id/imgProduct"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{`Delivery by next `+dateOfDelivery+` days`}" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

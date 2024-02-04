@@ -24,7 +24,12 @@ class OrderedAdapter(val dataList:List<NormalData>,val onCancelClick:(String)->U
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data1 = dataList[position]
         holder.binding.data = data1
+        val random = (0..10).shuffled().last()
+          holder.binding.dateOfDelivery = random.toString()
         holder.binding.originalAmount.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+        holder.binding.btnCancel.setOnClickListener {
+            onCancelClick.invoke(data1.title)
+        }
 
     }
     inner class ViewHolder(val binding:OrderedItemBinding):RecyclerView.ViewHolder(binding.root)

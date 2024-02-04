@@ -2,6 +2,7 @@ package alkusi.mahato.e_commerce.screens.Tab
 
 import alkusi.mahato.e_commerce.R
 import alkusi.mahato.e_commerce.databinding.FragmentTabBinding
+import alkusi.mahato.e_commerce.datahelper.SharedPrefHelper
 import alkusi.mahato.e_commerce.library.views.BaseFragment
 import alkusi.mahato.e_commerce.screens.Tab.Adapters.TabFragmentStateAdapter
 import android.app.Dialog
@@ -13,12 +14,19 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
+import com.google.firebase.auth.FirebaseAuth
 import com.saadahmedsoft.popupdialog.PopupDialog
 import com.saadahmedsoft.popupdialog.Styles
 import com.saadahmedsoft.popupdialog.listener.OnDialogButtonClickListener
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 
+@AndroidEntryPoint
 class TabFragment : BaseFragment<FragmentTabBinding>(R.layout.fragment_tab) {
+
+    @Inject
+    lateinit var sharedPrefHelper: SharedPrefHelper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
@@ -98,6 +106,8 @@ class TabFragment : BaseFragment<FragmentTabBinding>(R.layout.fragment_tab) {
                 override fun onPositiveClicked(dialog: Dialog) {
                     super.onPositiveClicked(dialog)
                     // finish the app logout means
+                     FirebaseAuth.getInstance().signOut()
+                    sharedPrefHelper.clearSharedPrefData()
                     requireActivity().finish()
                 }
 

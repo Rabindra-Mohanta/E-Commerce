@@ -33,6 +33,7 @@ class ShoppingFragmentViewModel @Inject constructor(
     var firebaseFirestore: FirebaseFirestore = FirebaseFirestore.getInstance()
     val allOrderedList = ArrayList<String>()
     val allCartList = ArrayList<String>()
+    var userAddress:String?=null
 
     init {
         //get data
@@ -101,17 +102,14 @@ class ShoppingFragmentViewModel @Inject constructor(
     }
 
     private fun getData() {
-        if(!isConnectionAvailable(context))
-        {
-            showNoNetworkMsg(context)
-            return
-        }
+
         firebaseFirestore.collection(MyConstants.USERS)
             .document(sharedPrefHelper.getString(MyConstants.EMAIL).toString()).get()
             .addOnCompleteListener(object : OnCompleteListener<DocumentSnapshot> {
                 override fun onComplete(task: Task<DocumentSnapshot>) {
                     if (task.isSuccessful) {
                         val result = task.result
+                        userAddress = result.get(MyConstants.ADDRESS).toString()
                         allOrderedList.clear()
                         allCartList.clear()
                         if (result.get(MyConstants.Ordered) != null) {

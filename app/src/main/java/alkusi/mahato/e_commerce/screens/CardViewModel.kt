@@ -2,27 +2,41 @@ package alkusi.mahato.e_commerce.screens
 
 import alkusi.mahato.e_commerce.Constants.FileName
 import alkusi.mahato.e_commerce.Constants.MyConstants
+import alkusi.mahato.e_commerce.R
+import alkusi.mahato.e_commerce.RoomDb.MyRoomDb
 import alkusi.mahato.e_commerce.datahelper.SharedPrefHelper
 import alkusi.mahato.e_commerce.screens.Home.Model.ElectronicsDataRes
 import alkusi.mahato.e_commerce.screens.Home.Model.MaleFemaleDataRes
 import android.content.Context
+import android.widget.Toast
 import androidx.databinding.ObservableBoolean
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.google.common.reflect.TypeToken
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.gson.Gson
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class CardViewModel @Inject constructor(@ApplicationContext private val context:Context,private val sharedPrefHelper:SharedPrefHelper):BaseViewModel() {
+class CardViewModel @Inject constructor(
+    @ApplicationContext private val context: Context,
+    private val sharedPrefHelper: SharedPrefHelper,
+    private val myRoomDb: MyRoomDb
+) : BaseViewModel() {
     val listOfData = ArrayList<NormalData>()
     val cartDataList = MutableLiveData<List<NormalData>>()
     var listOfCartData = ArrayList<OrderedDataRes>()
     var firebaseFirestore: FirebaseFirestore = FirebaseFirestore.getInstance()
     var isProgressbarVisible = ObservableBoolean(false)
     var isNodataFound = ObservableBoolean(false)
+    val cartTitleList = ArrayList<String>()
+
+    //this is for local data
+    val cartDao = myRoomDb.getCartDao()
+
     init {
         listOfData.clear()
         // this load all data
@@ -36,6 +50,7 @@ class CardViewModel @Inject constructor(@ApplicationContext private val context:
         //get ordered data
         getCartData()
     }
+
     fun loadMaleJsonFromAssets(): MaleFemaleDataRes {
         val inputStream = context?.assets?.open(FileName.MALEDATA)
         val size: Int = inputStream!!.available()
@@ -68,9 +83,13 @@ class CardViewModel @Inject constructor(@ApplicationContext private val context:
         val type = object : TypeToken<ElectronicsDataRes>() {}.type
         return Gson().fromJson(json, type)
     }
-    private fun getCartData() {
+
+    fun getCartData() {
         if (!isConnectionAvailable(context)) {
-            showNoNetworkMsg(context)
+            viewModelScope.launch {
+                cartDataList.value = cartDao.getAllData()
+                showNoNetworkMsg(context)
+            }
             return
         }
         isProgressbarVisible.set(true)
@@ -80,7 +99,7 @@ class CardViewModel @Inject constructor(@ApplicationContext private val context:
                 if (task.isSuccessful) {
                     val result = task.result
                     if (result.get(MyConstants.CART) != null) {
-                        val cartTitleList = ArrayList<String>()
+                        cartTitleList.clear()
                         cartTitleList.addAll(result.get(MyConstants.CART) as List<String>)
                         val cartData = ArrayList<NormalData>()
                         for (i in listOfData.indices) {
@@ -92,13 +111,35 @@ class CardViewModel @Inject constructor(@ApplicationContext private val context:
                                 }
                             }
                         }
-                        isProgressbarVisible.set(false)
+
                         cartDataList.value = cartData
+                        viewModelScope.launch {
+                            cartDao.deleteAllData()
+                            cartDao.insertData(cartData)
+                        }
+
 
                     }
 
                 }
+                isProgressbarVisible.set(false)
             }
     }
 
+    fun removeFromCart(title: String?) {
+        if (!isConnectionAvailable(context)) {
+            showNoNetworkMsg(context)
+            return
+        }
+        cartTitleList.remove(title)
+        firebaseFirestore.collection(MyConstants.USERS)
+            .document(sharedPrefHelper.getString(MyConstants.EMAIL).toString())
+            .update(MyConstants.CART, cartTitleList)
+            .addOnSuccessListener {
+                Toast.makeText(context, context.getString(R.string.txt_success), Toast.LENGTH_SHORT)
+                    .show()
+                getCartData()
+
+            }
+    }
 }

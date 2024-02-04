@@ -10,9 +10,11 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.saadahmedsoft.popupdialog.PopupDialog
@@ -35,6 +37,7 @@ class TabFragment : BaseFragment<FragmentTabBinding>(R.layout.fragment_tab) {
     override fun FragmentTabBinding.initialize() {
         setToolbar()
         init()
+        setDrawerLayout()
     }
 
 
@@ -115,5 +118,40 @@ class TabFragment : BaseFragment<FragmentTabBinding>(R.layout.fragment_tab) {
                     super.onNegativeClicked(dialog)
                 }
             })
+    }
+    private fun setDrawerLayout() {
+
+       val toggle = ActionBarDrawerToggle(requireActivity(), binding.drawerLayout, binding.newToolbar.toolbar, R.string.txt_openDrawer, R.string.txt_closeDrawer);
+        binding.drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+        val view = binding.navigationView.getHeaderView(0)
+
+        binding.navigationView.setNavigationItemSelectedListener(object :
+            NavigationView.OnNavigationItemSelectedListener {
+            override fun onNavigationItemSelected(item: MenuItem): Boolean {
+                when (item.itemId) {
+
+                    R.id.aboutUs ->
+                    {
+                        findNavController().navigate(R.id.action_tabFragment_to_aboutUsFragment)
+                        return true
+                    }
+                    R.id.contactUs ->
+                    {
+                        findNavController().navigate(R.id.action_tabFragment_to_contactUsFragment)
+                       return true
+                    }
+                    R.id.address ->
+                    {
+                        findNavController().navigate(R.id.action_tabFragment_to_addressFragment)
+
+                        return true
+                    }
+                }
+                return true
+            }
+
+
+        })
     }
 }

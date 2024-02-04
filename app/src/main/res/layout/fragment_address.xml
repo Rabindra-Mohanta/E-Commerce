@@ -1,15 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".screens.More.AddressFragment">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/yellow_tool_gradient"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/newToolbar"
+            layout="@layout/my_toolbar" />
+    </com.google.android.material.appbar.AppBarLayout>
     <TextView
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        android:textSize="@dimen/_15ssp"
         android:gravity="center"
         android:textColor="@color/black"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="0dp"
+        android:text="Our headquarters are located at E-Commerce, Patia, PIN - 751024, Odisha, Bhubaneswar. At this central hub, we coordinate all our operations and work diligently to ensure your satisfaction. Please feel free to visit us during our business hours if you ever want to connect in person. If you need to send us anything by mail, kindly use this address, and we'll make sure to attend to your correspondence promptly. For quick and convenient communication, our online platform remains the primary channel, but we always welcome the opportunity to engage with our customers face-to-face at our physical address."
+        />
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

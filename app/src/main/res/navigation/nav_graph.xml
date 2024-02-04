@@ -80,9 +80,30 @@
         <action
             android:id="@+id/action_tabFragment_to_shoppingFragment"
             app:destination="@id/shoppingFragment" />
+        <action
+            android:id="@+id/action_tabFragment_to_addressFragment"
+            app:destination="@id/addressFragment" />
+        <action
+            android:id="@+id/action_tabFragment_to_aboutUsFragment"
+            app:destination="@id/aboutUsFragment" />
+        <action
+            android:id="@+id/action_tabFragment_to_contactUsFragment"
+            app:destination="@id/contactUsFragment" />
     </fragment>
     <fragment
         android:id="@+id/shoppingFragment"
         android:name="alkusi.mahato.e_commerce.screens.Shping.Fragments.ShoppingFragment"
         android:label="ShoppingFragment" />
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:name="alkusi.mahato.e_commerce.screens.More.ContactUsFragment"
+        android:label="ContactUsFragment" />
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="alkusi.mahato.e_commerce.screens.More.AboutUsFragment"
+        android:label="AboutUsFragment" />
+    <fragment
+        android:id="@+id/addressFragment"
+        android:name="alkusi.mahato.e_commerce.screens.More.AddressFragment"
+        android:label="AddressFragment" />
 </navigation>

@@ -52,6 +52,8 @@
     <string name="txt_cancel">Cancel</string>
     <string name="msg_cancel_order">Are you sure want to cancel this order ?</string>
     <string name="txt_remove">Remove</string>
+    <string name="txt_openDrawer">Open</string>
+    <string name="txt_closeDrawer">Close</string>
     <string name="msg_remove_dialog">Are you sure want to remove this item from cart ?</string>
     <string name="msg_plz_check_your_email">Please check your mail and reset password</string>
 </resources>

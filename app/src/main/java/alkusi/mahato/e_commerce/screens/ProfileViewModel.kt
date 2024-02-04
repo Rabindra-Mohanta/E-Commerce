@@ -6,6 +6,7 @@ import alkusi.mahato.e_commerce.RoomDb.MyRoomDb
 import alkusi.mahato.e_commerce.datahelper.SharedPrefHelper
 import android.content.Context
 import android.net.Uri
+import android.util.Log
 import android.widget.Toast
 import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableField
@@ -30,6 +31,7 @@ class ProfileViewModel @Inject constructor(
     var profileDataRes = ObservableField<ProfileDataRes>()
     var isUpdatedProfile = MutableLiveData<Boolean>(false)
     val profileDao = myRoomDb.getProfileDao()
+    var imageUrl = MutableLiveData<String>()
 
     init {
         getProfileData()
@@ -66,10 +68,24 @@ class ProfileViewModel @Inject constructor(
                         profileDao.insertData(res)
                     }
                     profileDataRes.set(res)
+                    loadProfileImage(res.image.toString())
                     isProgressbarVisible.set(false)
                 }
             }
     }
+
+    private fun loadProfileImage(imageName: String) {
+        try {
+            var firebaseStorage =
+                FirebaseStorage.getInstance().getReference(MyConstants.IMAGES + imageName)
+            firebaseStorage.downloadUrl.addOnSuccessListener { uri ->
+                imageUrl.value = uri.toString()
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
 
     fun updateProfileData(profileDataRes: ProfileDataRes) {
         if (!isConnectionAvailable(context)) {

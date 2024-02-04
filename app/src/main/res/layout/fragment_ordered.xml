@@ -35,7 +35,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:textSize="@dimen/_15ssp"
             android:textStyle="bold"
-            android:text="@string/txt_no_data_found"
+            android:text="You have not ordered anything"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <ProgressBar

@@ -37,7 +37,7 @@
                 android:layout_height="match_parent">
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/imageView"
-                    circleImageFromUrl="@{viewModel.profileDataRes.image}"
+                    circleImageFromUrl="@{viewModel.imageUrl}"
                     android:layout_width="@dimen/_100sdp"
                     android:layout_height="@dimen/_100sdp"
                     android:layout_marginTop="@dimen/_10sdp"
